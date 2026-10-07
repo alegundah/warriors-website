@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512">
+  <title>Warriors</title>
+  <circle cx="50" cy="50" r="48" fill="#d30005"/>
+  <circle cx="50" cy="50" r="42" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <path fill="#ffffff" d="M19 30 H31 L38.5 60 L45 36 H55 L61.5 60 L69 30 H81 L68 72 H57 L50 48 L43 72 H32 Z"/>
+  <path fill="#ffffff" d="M19 30 Q17 22 24 20 L31 30 Z"/>
+  <path fill="#ffffff" d="M81 30 Q83 22 76 20 L69 30 Z"/>
+  <circle cx="50" cy="78" r="4.5" fill="#111111"/>
+</svg>
