@@ -38,7 +38,7 @@ Rules: one accent (red) for the whole page. Red never appears as a background ex
 - Cards: radius 0, 1px hairline border, 24px padding, no shadow. Use cards only when hierarchy needs them; otherwise `border-t` / `divide-y`.
 - Inputs: 48px tall, 1px hairline, radius 0, red focus outline (2px, offset 3px).
 - Icons: Phosphor (`@phosphor-icons/react`), weight `regular`, 20 or 24px, one family only. Decorative icons get `aria-hidden`.
-- Images: `next/image`, edge-to-edge inside their frame, `object-cover`. Placeholder slots are labelled so the 3D renders can be swapped in.
+- Images: `next/image`, edge-to-edge inside their frame, `object-cover`.
 
 ## 5. Layout
 

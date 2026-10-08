@@ -1,5 +1,4 @@
 import { Footer } from "@/components/sections/footer";
-import { Gallery } from "@/components/sections/gallery";
 import { Hero } from "@/components/sections/hero";
 import { Intro } from "@/components/sections/intro";
 import { Market } from "@/components/sections/market";
@@ -16,7 +15,6 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Intro />
-        <Gallery />
         <Saga />
         <NextRaid />
         <Recruitment />

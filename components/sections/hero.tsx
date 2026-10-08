@@ -5,12 +5,10 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRef } from "react";
 
-import { LogoMark } from "@/components/brand/logo";
-import { RenderSlot } from "@/components/render-slot";
+import { ShieldModel } from "@/components/shield-model";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { clan } from "@/content/clan";
-import { renders } from "@/content/renders";
 
 // Canvas effect: client only, never server rendered.
 const Particles = dynamic(
@@ -31,8 +29,6 @@ export function Hero() {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  // Background drifts slower than the page so the render feels deep behind the type.
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "22%"]);
   const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
@@ -41,20 +37,6 @@ export function Hero() {
       ref={ref}
       className="relative isolate flex min-h-[100dvh] flex-col justify-end overflow-hidden bg-ink text-canvas"
     >
-      <motion.div style={{ y }} className="absolute inset-0 -z-20 will-change-transform">
-        <RenderSlot
-          slot={renders.hero}
-          priority
-          hideBadge
-          sizes="100vw"
-          className="h-[115%] w-full"
-        />
-      </motion.div>
-      {/* darken for legibility: strongest at the bottom-left where the type sits */}
-      <div
-        className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(17,17,17,0.92)_0%,rgba(17,17,17,0.55)_45%,rgba(17,17,17,0.15)_100%)]"
-        aria-hidden="true"
-      />
       {!reduce ? (
         <Particles
           className="absolute inset-0 -z-10"
@@ -137,7 +119,7 @@ export function Hero() {
             animate="show"
             className="hidden justify-self-end md:block"
           >
-            <LogoMark size={176} title="Warriors clan shield" />
+            <ShieldModel className="w-[280px] lg:w-[360px]" />
           </motion.div>
         </div>
 
@@ -148,8 +130,6 @@ export function Hero() {
           animate="show"
           className="mt-12 flex items-center gap-3 border-t border-canvas/20 pt-4 text-xs font-medium uppercase tracking-[0.14em] text-canvas/60"
         >
-          <span>{renders.hero.caption}</span>
-          <span aria-hidden="true">/</span>
           <span>{clan.homePort}, 54° north</span>
         </motion.p>
       </motion.div>
